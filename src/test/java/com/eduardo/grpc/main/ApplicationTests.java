@@ -13,11 +13,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SpringGrpcApplicationTests {
 
   @Autowired
-  private HelloWorldClient helloWorldClient;
+  private WorkspaceClient helloWorldClient;
 
   @Test
   public void testSayHello() {
-    assertThat(helloWorldClient.sayHello("John", "Doe"))
-        .isEqualTo("Hello John Doe!");
+    assertThat(helloWorldClient.createWorkspace("windows", 10))
+        .isEqualTo("Creating workspace with type  'windows' and size: 10!");
   }
 }
