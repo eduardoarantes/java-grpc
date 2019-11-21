@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringGrpcApplicationTests {
+public class ApplicationTests {
 
   @Autowired
   private WorkspaceClient helloWorldClient;

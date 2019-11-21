@@ -28,7 +28,7 @@ public class WorkspaceClient {
                 WorkspaceServiceGrpc.newBlockingStub(managedChannel);
     }
 
-    public String createWorkspace(String type, String size) {
+    public String createWorkspace(String type, int size) {
         WorkspaceRequest workspace = WorkspaceRequest.newBuilder().setType(type)
                 .setSize(size).build();
         LOGGER.info("client sending {}", workspace);
