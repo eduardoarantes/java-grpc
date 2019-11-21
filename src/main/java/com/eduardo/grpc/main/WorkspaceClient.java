@@ -17,14 +17,14 @@ public class WorkspaceClient {
     private static final Logger LOGGER =
             LoggerFactory.getLogger(WorkspaceClient.class);
 
-    private WorkspaceServiceGrpc.WorkspaceServiceBlockingStub WorkspaceWorldServiceBlockingStub;
+    private WorkspaceServiceGrpc.WorkspaceServiceBlockingStub workspaceService;
 
     @PostConstruct
     private void init() {
         ManagedChannel managedChannel = ManagedChannelBuilder
                 .forAddress("localhost", 6565).usePlaintext().build();
 
-        WorkspaceWorldServiceBlockingStub =
+        workspaceService =
                 WorkspaceServiceGrpc.newBlockingStub(managedChannel);
     }
 
@@ -34,7 +34,7 @@ public class WorkspaceClient {
         LOGGER.info("client sending {}", workspace);
 
         WorkspaceResponse response =
-                WorkspaceWorldServiceBlockingStub.createWorkspace(workspace);
+                workspaceService.createWorkspace(workspace);
         LOGGER.info("client received {}", response);
 
         return response.getTaskId();
