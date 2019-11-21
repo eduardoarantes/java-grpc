@@ -1,0 +1,16 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.eduardo.grpc;
+
+message WorkspaceRequest {
+    string type = 1;
+    string size = 2;
+}
+
+message WorkspaceResponse {
+    string taskId = 1;
+}
+
+service WorkspaceService {
+    rpc createWorkspace(WorkspaceRequest) returns (WorkspaceResponse);
+}
