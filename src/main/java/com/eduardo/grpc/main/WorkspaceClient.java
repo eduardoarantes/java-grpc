@@ -14,6 +14,11 @@ import javax.annotation.PostConstruct;
 @Component
 public class WorkspaceClient {
 
+    private int serverPort = 6565;
+
+    private String serverLocation= "localhost";
+
+
     private static final Logger LOGGER =
             LoggerFactory.getLogger(WorkspaceClient.class);
 
@@ -22,7 +27,7 @@ public class WorkspaceClient {
     @PostConstruct
     private void init() {
         ManagedChannel managedChannel = ManagedChannelBuilder
-                .forAddress("localhost", 6565).usePlaintext().build();
+                .forAddress(serverLocation, serverPort).usePlaintext().build();
 
         workspaceService =
                 WorkspaceServiceGrpc.newBlockingStub(managedChannel);
