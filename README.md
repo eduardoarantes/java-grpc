@@ -15,3 +15,4 @@ Considerations:
 
 * Load Balancing: https://kubernetes.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/
 * Monitoring: https://github.com/grpc/grpc/blob/master/doc/health-checking.md
+* authorizatoin: https://sultanov.dev/blog/securing-java-grpc-services-with-jwt-based-authentication/
