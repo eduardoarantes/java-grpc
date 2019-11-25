@@ -11,6 +11,10 @@ message WorkspaceResponse {
     string taskId = 1;
 }
 
+/*
+this is just a example on how to document
+
+*/
 service WorkspaceService {
     rpc createWorkspace(WorkspaceRequest) returns (WorkspaceResponse);
 }

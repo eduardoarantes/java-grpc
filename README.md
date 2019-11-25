@@ -10,6 +10,9 @@ Tools
 
 * gRPC Client: https://github.com/uw-labs/bloomrpc
 
+* gRPC Gateway: https://github.com/grpc-ecosystem/grpc-gateway
+
+   it generates gRPC and REST endpoints at the same time
 
 Considerations:
 
