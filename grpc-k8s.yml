@@ -28,7 +28,7 @@ metadata:
 spec:
   # if your cluster supports it, uncomment the following to automatically create
   # an external load-balanced IP for the frontend service.
-  type: LoadBalancer
+  type: NodePort
   ports:
   - port: 8080
     protocol: TCP
@@ -36,7 +36,8 @@ spec:
   selector:
     app: grpc
 ---
-apiVersion: v1
+
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: grpc-ingress
@@ -44,8 +45,10 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
+  - host: grpc.info
+    http:
       paths:
-      - backend:
+      - path: /
+        backend:
           serviceName: grpc-service
-          servicePort: 8080
+          servicePort: 30167
