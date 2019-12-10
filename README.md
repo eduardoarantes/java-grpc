@@ -60,3 +60,9 @@ Running on K8s
     Now copy the token and paste it into Enter token field on login screen.
     
 
+
+4. Configure ingress
+
+   https://medium.com/@Oskarr3/setting-up-ingress-on-minikube-6ae825e98f82
+
+        echo "$(minikube ip) grpc.info" | sudo tee -a /etc/hosts

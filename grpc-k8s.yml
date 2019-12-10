@@ -51,4 +51,4 @@ spec:
       - path: /
         backend:
           serviceName: grpc-service
-          servicePort: 30167
+          servicePort: 8080

@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: grpc-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: grpc.info
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: grpc-service
+          servicePort: 8080
