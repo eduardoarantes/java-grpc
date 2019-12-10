@@ -1,5 +1,3 @@
-
-
 Testing GRPC with REST  
   
 References:  
@@ -39,3 +37,26 @@ Running on K8s
 2.  Installing minikube
   
     `brew install minikube`
+    
+
+3. Installing K8s dashboard
+
+    installing the app
+        
+        kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta6/aio/deploy/recommended.yaml
+
+    creating user
+
+         kubectl apply -f src/main/resources/dashboard-adminuser.yaml
+    
+    You can access Dashboard using the kubectl command-line tool by running the following command:
+
+        kubectl proxy
+         
+    get Bearer Token
+     
+        kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
+        
+    Now copy the token and paste it into Enter token field on login screen.
+    
+
