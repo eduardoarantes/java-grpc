@@ -2,20 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: grpc
+    app: grpc
   name: grpc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: grpc
+      app: grpc
   template:
     metadata:
       labels:
-        run: grpc
+        app: grpc
     spec:
       containers:
-      - image: eduardoarodrigues/basic:grpc-1.3.jar
-        name: grpc
+      - name: grpc
+        image: eduardoarodrigues/basic:grpc-1.3.jar
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
