@@ -20,7 +20,12 @@ Considerations:
 * Monitoring: https://github.com/grpc/grpc/blob/master/doc/health-checking.md  
 * authorizatoin: https://sultanov.dev/blog/securing-java-grpc-services-with-jwt-based-authentication/  
   
-  
+
+Generating classes from proto files
+
+    mvn compile
+
+
 Running on K8s  
   
 1.  installing kubectl
@@ -59,6 +64,10 @@ Running on K8s
         
     Now copy the token and paste it into Enter token field on login screen.
     
+
+   Open dashboard
+   
+    minikube dashboard 
 
 
 4. Configure ingress

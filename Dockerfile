@@ -10,6 +10,7 @@ RUN mvn package -Dmaven.test.skip=true -DskipTests
 
 FROM openjdk:11-jre-slim
 
+RUN apt-get update && apt-get install -y procps  && apt-get install -y wget
 RUN mkdir /app
 WORKDIR /app
 COPY --from=build /root/target/grpc-1.3.jar grpc-1.3.jar
