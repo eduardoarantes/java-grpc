@@ -4,6 +4,7 @@ References:
   
 * https://spring.io/blog/2015/03/22/using-google-protocol-buffers-with-spring-mvc-based-rest-services  
 * https://thenewstack.io/build-real-world-microservices-with-grpc/  
+* https://matthewpalmer.net/kubernetes-app-developer/articles/
   
   
 Tools   
@@ -43,6 +44,8 @@ Running on K8s
   
     `brew install minikube`
     
+    Tutorial: https://kubernetes.io/docs/tutorials/hello-minikube/
+    
 
 3. Installing K8s dashboard
 
@@ -75,3 +78,7 @@ Running on K8s
    https://medium.com/@Oskarr3/setting-up-ingress-on-minikube-6ae825e98f82
 
         echo "$(minikube ip) grpc.info" | sudo tee -a /etc/hosts
+        
+        
+
+  https://kubernetes.io/docs/reference/kubectl/cheatsheet/#interacting-with-running-pods

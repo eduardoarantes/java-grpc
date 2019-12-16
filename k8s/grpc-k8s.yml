@@ -2,17 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: grpc
+    app: grpc
   name: grpc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: grpc
+      app: grpc
   template:
     metadata:
       labels:
-        run: grpc
+        app: grpc
     spec:
       containers:
       - name: grpc
@@ -28,13 +28,14 @@ metadata:
 spec:
   # if your cluster supports it, uncomment the following to automatically create
   # an external load-balanced IP for the frontend service.
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 8080
     protocol: TCP
     targetPort: 8080
   selector:
     app: grpc
+
 ---
 
 apiVersion: extensions/v1beta1
