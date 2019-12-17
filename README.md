@@ -5,6 +5,7 @@ References:
 * https://spring.io/blog/2015/03/22/using-google-protocol-buffers-with-spring-mvc-based-rest-services  
 * https://thenewstack.io/build-real-world-microservices-with-grpc/  
 * https://matthewpalmer.net/kubernetes-app-developer/articles/
+* https://www.baeldung.com/spring-cloud-configuration
   
   
 Tools   
@@ -19,7 +20,7 @@ Considerations:
   
 * Load Balancing: https://kubernetes.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/  
 * Monitoring: https://github.com/grpc/grpc/blob/master/doc/health-checking.md  
-* authorizatoin: https://sultanov.dev/blog/securing-java-grpc-services-with-jwt-based-authentication/  
+* authorization: https://sultanov.dev/blog/securing-java-grpc-services-with-jwt-based-authentication/  
   
 
 Generating classes from proto files

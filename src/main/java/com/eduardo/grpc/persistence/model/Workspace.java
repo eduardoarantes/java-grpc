@@ -9,8 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Data
 @RequiredArgsConstructor(staticName="of")
@@ -24,7 +24,7 @@ public class Workspace {
 
     @Valid
     @NotNull(message = "size field is required")
-    @Size(min = 1)
+    @Min(value = 1)
     @NonNull
     private int size;
 
